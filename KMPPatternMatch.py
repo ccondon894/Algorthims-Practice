@@ -1,6 +1,9 @@
 
+#Improve time efficiency of patternMatch to search for pattern = p in string = s in O(m+n) time
+#Make arr to to find longest prefix that is also a suffix at each index in pattern
+#Use arr during mismatches to see if a prefix exists at suffix before mismatch 
+#This lets us continue matching at current index in s because know if a prefix exists in p prior to mismatch 
 
-#create array to find longest prefix that is also a suffix at each index in pattern
 def make_array(pattern):
 
 	m = len(pattern)
@@ -58,6 +61,7 @@ def patternMatch(p,s):
 
 			print("pattern found at index: ", j-n+1 )
 
+			#reset to start of pattern & continue along string
 			i = 0
 			j += 1
 
